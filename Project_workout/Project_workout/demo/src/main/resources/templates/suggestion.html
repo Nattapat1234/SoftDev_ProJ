@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENERGYM - คำแนะนำ</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header th:replace="fragments/header :: header"></header>
+
+    <main>
+        <h1>คำแนะนำสำหรับคุณ</h1>
+        <div class="suggestion-container">
+            <div class="suggestion-card">
+                <h2>แผนการออกกำลังกาย</h2>
+                <p th:text="${workoutSuggestion}">คำแนะนำเกี่ยวกับการออกกำลังกาย</p>
+                <a href="/workout" class="btn btn-secondary">ดูแผนการออกกำลังกาย</a>
+            </div>
+            <div class="suggestion-card">
+                <h2>แผนโภชนาการ</h2>
+                <p th:text="${nutritionSuggestion}">คำแนะนำเกี่ยวกับโภชนาการ</p>
+                <a href="/nutrition" class="btn btn-secondary">ดูแผนโภชนาการ</a>
+            </div>
+            <div class="suggestion-card">
+                <h2>เคล็ดลับสุขภาพ</h2>
+                <ul>
+                    <li th:each="tip : ${healthTips}" th:text="${tip}">เคล็ดลับสุขภาพ</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

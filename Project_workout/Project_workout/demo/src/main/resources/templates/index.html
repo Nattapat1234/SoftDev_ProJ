@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">ENERGYM - ระบบออกกำลังกายส่วนตัว</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-gray-800 text-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <img src="../templates/images/logo.png"class="h-10 w-10 mr-2">
+                    <span class="text-xl font-bold">ENERGYM⚡️</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="/" class="text-white hover:text-gray-300">หน้าหลัก</a>
+                <a href="/courses" class="text-white hover:text-gray-300">คอร์ส</a>
+                <a href="/about" class="text-white hover:text-gray-300">เกี่ยวกับเรา</a>
+                <a href="/contact" class="text-white hover:text-gray-300">ติดต่อเรา</a>
+                <a href="/profile" class="text-white hover:text-gray-300">โปรไฟล์</a>
+            </nav>
+            <div>
+                <a href="/login" class="bg-transparent hover:bg-white hover:text-gray-800 text-white font-semibold py-2 px-4 border border-white hover:border-transparent rounded">
+                    เข้าสู่ระบบ
+                </a>
+                <a href="/signup" class="bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    สมัครสมาชิก
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>          
+        <!-- Categories section -->
+        <section class="container mx-auto px-4 py-16">
+            <h2 class="text-center text-2xl font-semibold mb-8">หมวดหมู่การฝึกออกกำลังกาย</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+                <div>
+                    <img src="https://shorturl.at/0lyYl" alt="โปรแกรมแขน" class="mx-auto w-24 h-24 mb-4">
+                    <h3 class="font-semibold">โปรแกรมแขน</h3>
+                </div>
+                <div>
+                    <img src="https://www.google.com/imgres?q=8%3Bkp&imgurl=https%3A%2F%2Ff.ptcdn.info%2F739%2F051%2F000%2Fora4bmbfxBpalbWtkfm-o.jpg&imgrefurl=https%3A%2F%2Fpantip.com%2Ftopic%2F36545500&docid=JRkhOj5Tv1iEKM&tbnid=cWsZb--C1ghQjM&vet=12ahUKEwiD99_fu86IAxWHT2wGHfJHCpEQM3oECGoQAA..i&w=620&h=414&hcb=2&ved=2ahUKEwiD99_fu86IAxWHT2wGHfJHCpEQM3oECGoQAA" alt="โปรแกรมไหล่" class="mx-auto w-24 h-24 mb-4">
+                    <h3 class="font-semibold">โปรแกรมไหล่</h3>
+                </div>
+                <div>
+                    <img src="images/chest.png" alt="โปรแกรมอก" class="mx-auto w-24 h-24 mb-4">
+                    <h3 class="font-semibold">โปรแกรมอก</h3>
+                </div>
+                <div>
+                    <img src="images/leg.png" alt="โปรแกรมขา" class="mx-auto w-24 h-24 mb-4">
+                    <h3 class="font-semibold">โปรแกรมขา</h3>
+                </div>
+                <div>
+                    <img src="images/back.png" alt="โปรแกรมหลัง" class="mx-auto w-24 h-24 mb-4">
+                    <h3 class="font-semibold">โปรแกรมหลัง</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">ENERGYM⚡️</h3>
+                    <p class="text-sm">เราช่วยคุณสร้างร่างกายที่แข็งแรงและมีสุขภาพดี</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดต่อเรา</h4>
+                    <p class="text-sm">อีเมล: info@energym.com</p>
+                    <p class="text-sm">โทร: 02-123-4567</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดตามเรา</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gray-300">Facebook</a>
+                        <a href="#" class="hover:text-gray-300">Instagram</a>
+                        <a href="#" class="hover:text-gray-300">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
+                <p>&copy; 2024 ENERGYM. สงวนลิขสิทธิ์ทั้งหมด.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

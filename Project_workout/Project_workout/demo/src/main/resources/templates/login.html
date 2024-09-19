@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENERGYM - เข้าสู่ระบบ</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+    <main class="form-container">
+        <h1>เข้าสู่ระบบ</h1>
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">รหัสผ่าน:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+        </form>
+        <p>ยังไม่มีบัญชี? <a href="/register">สมัครสมาชิก</a></p>
+        <p><a href="/forget-password">ลืมรหัสผ่าน?</a></p>
+    </main>
+
+</body>
+</html>

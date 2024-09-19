@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">ENERGYM - คอร์สออกกำลังกาย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-gray-800 text-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <img src="https://drive.google.com/file/d/1zcOyLmU0_hxnBIrO1ffyVxusbQqichqT/view?usp=sharing"
+                        class="h-10 w-10 mr-2">
+                    <span class="text-xl font-bold">ENERGYM⚡️</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="/" class="text-white hover:text-gray-300">หน้าหลัก</a>
+                <a href="/courses" class="text-white hover:text-gray-300">คอร์ส</a>
+                <a href="/about" class="text-white hover:text-gray-300">เกี่ยวกับเรา</a>
+                <a href="/contact" class="text-white hover:text-gray-300">ติดต่อเรา</a>
+                <a href="/profile" class="text-white hover:text-gray-300">โปรไฟล์</a>
+            </nav>
+            <div>
+                <a href="/login"
+                    class="bg-transparent hover:bg-white hover:text-gray-800 text-white font-semibold py-2 px-4 border border-white hover:border-transparent rounded">
+                    เข้าสู่ระบบ
+                </a>
+                <a href="/signup"
+                    class="bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    สมัครสมาชิก
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <header replace="fragments/header :: header"></header>
+
+        <main>
+            <div class="course-detail">
+                <img src="${course.imageUrl}" :alt="${course.title}" class="course-image">
+                <h1 text="${course.title}">ชื่อคอร์ส</h1>
+                <p text="${course.description}" class="course-description">รายละเอียดคอร์ส</p>
+                <div class="course-info">
+                    <p><strong>ระยะเวลา:</strong> <span text="${course.duration}">ระยะเวลาคอร์ส</span></p>
+                    <p><strong>ระดับ:</strong> <span text="${course.level}">ระดับความยาก</span></p>
+                    <p><strong>อุปกรณ์ที่ต้องใช้:</strong> <span text="${course.equipment}">อุปกรณ์ที่จำเป็น</span></p>
+                </div>
+                <h2>รายละเอียดการเรียน</h2>
+                <ul>
+                    <li each="lesson : ${course.lessons}" text="${lesson}">บทเรียน</li>
+                </ul>
+                <a href="#" class="btn btn-primary">ลงทะเบียนเรียน</a>
+            </div>
+        </main>
+
+        <footer replace="fragments/footer :: footer"></footer>
+    </body>
+
+</html>

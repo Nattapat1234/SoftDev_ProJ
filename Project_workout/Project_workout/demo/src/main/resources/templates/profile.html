@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ENERGYM - โปรไฟล์</title>
+</head>
+<body>
+        <title>ENERGYM - โปรไฟล์</title>
+        <main class="container mx-auto px-4 py-8">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
+                <h1 class="text-2xl font-bold mb-6 text-center">ข้อมูลของคุณ</h1>
+                <form action="/profile" method="post" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">ชื่อ</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="age" class="block text-sm font-medium text-gray-700">อายุ</label>
+                        <input type="number" id="age" name="age" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="flex-1">
+                            <label for="height" class="block text-sm font-medium text-gray-700">ส่วนสูง (ซม.)</label>
+                            <input type="number" id="height" name="height" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="flex-1">
+                            <label for="weight" class="block text-sm font-medium text-gray-700">น้ำหนัก (กก.)</label>
+                            <input type="number" id="weight" name="weight" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">เป้าหมายการออกกำลังกาย</label>
+                        <select name="goal" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <option value="">เลือกเป้าหมาย</option>
+                            <option value="ลดน้ำหนัก">ลดน้ำหนัก</option>
+                            <option value="เพิ่มกล้ามเนื้อ">เพิ่มกล้ามเนื้อ</option>
+                            <option value="เพิ่มความแข็งแรง">เพิ่มความแข็งแรง</option>
+                            <option value="เพิ่มความยืดหยุ่น">เพิ่มความยืดหยุ่น</option>
+                            <option value="ปรับปรุงสุขภาพทั่วไป">ปรับปรุงสุขภาพทั่วไป</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            สร้างแผนออกกำลังกาย
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

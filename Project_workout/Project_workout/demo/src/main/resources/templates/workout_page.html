@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENERGYM - การออกกำลังกาย</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header th:replace="fragments/header :: header"></header>
+
+    <main>
+        <h1>การออกกำลังกายของคุณ</h1>
+        <div class="workout-container">
+            <div class="workout-info">
+                <h2 th:text="${workout.title}">ชื่อการออกกำลังกาย</h2>
+                <p th:text="${workout.description}">คำอธิบายการออกกำลังกาย</p>
+                <p><strong>ระยะเวลา:</strong> <span th:text="${workout.duration}">ระยะเวลา</span></p>
+                <p><strong>แคลอรี่ที่เผาผลาญ:</strong> <span th:text="${workout.calories}">แคลอรี่</span></p>
+            </div>
+            <div class="exercise-list">
+                <h3>ท่าออกกำลังกาย</h3>
+                <ul>
+                    <li th:each="exercise : ${workout.exercises}">
+                        <h4 th:text="${exercise.name}">ชื่อท่า</h4>
+                        <p th:text="${exercise.description}">คำอธิบายท่า</p>
+                        <p><strong>จำนวนครั้ง:</strong> <span th:text="${exercise.reps}">จำนวนครั้ง</span></p>
+                        <p><strong>เซ็ต:</strong> <span th:text="${exercise.sets}">จำนวนเซ็ต</span></p>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-primary">เริ่มการออกกำลังกาย</button>
+        </div>
+    </main>
+
+    <footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
